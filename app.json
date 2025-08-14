@@ -1,0 +1,48 @@
+{
+  "name": "Telegram AI Chatbot",
+  "description": "A Telegram AI chatbot powered by OpenAI's GPT models, built with Python.",
+  "repository": "https://github.com/yourusername/telegram-ai-chatbot",
+  "logo": "https://telegra.ph/file/example-ai-logo.png",
+  "keywords": [
+    "telegram",
+    "chatbot",
+    "openai",
+    "gpt",
+    "ai",
+    "heroku"
+  ],
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API Hash from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your Telegram bot token from @BotFather",
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "description": "Your API key from https://platform.openai.com",
+      "required": true
+    },
+    "ALLOWED_USERS": {
+      "description": "Telegram user IDs allowed to use the bot (comma-separated)",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "standard-1X"
+    }
+  },
+  "stack": "heroku-22"
+}
