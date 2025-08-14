@@ -15,6 +15,9 @@ SUPPORT_GRP = getenv("SUPPORT_GRP","https://t.me/+G42j7plUt91mYmQx")
 UPDATE_CHNL = getenv("UPDATE_CHNL","UPDATE_IN_BOTS")
 OWNER_USERNAME = getenv("OWNER_USERNAME", None)
 
+# OpenAI API key
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY","")
+
 # Random Start Images
 IMG = [
      "https://telegra.ph/file/45e5da1eab8f5892981ca.jpg",
