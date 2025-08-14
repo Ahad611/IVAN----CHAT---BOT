@@ -12,7 +12,7 @@ A modular Telegram chatbot powered by OpenAI's GPT models and `python-telegram-b
 
 ## Quick Deploy (Heroku)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.herokucdn.com/deploy/button.svg)](https://github.com/Ahad611/IVAN----CHAT---BOT?tab=readme-ov-file))
 
 ### Env Vars
 - `API_ID` — from https://my.telegram.org
