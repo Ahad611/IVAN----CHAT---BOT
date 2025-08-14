@@ -1,48 +1,42 @@
 {
-  "name": "Telegram AI Chatbot",
-  "description": "A Telegram AI chatbot powered by OpenAI's GPT models, built with Python.",
-  "repository": "https://github.com/yourusername/telegram-ai-chatbot",
-  "logo": "https://telegra.ph/file/example-ai-logo.png",
+  "name": "IvanxChatBot",
+  "description": "A telegram bot",
+  "logo": "https://te.legra.ph/file/5bf629d10afd4af953585.jpg",
   "keywords": [
-    "telegram",
-    "chatbot",
-    "openai",
-    "gpt",
-    "ai",
-    "heroku"
+    "Chatbot",
+    "mongodb",
+    "python",
+    "pyrogram"
   ],
+    "buildpacks": [{
+    "url": "heroku/python"
+  }],
+  "repository": "https://github.com/Its-starXboi/Chatbot",
   "env": {
     "API_ID": {
-      "description": "Your Telegram API ID from https://my.telegram.org",
-      "required": true
+      "description": "Get this value from my.telegram.org/apps.",
+      "required": true,
+      "value": "22657083"
     },
     "API_HASH": {
-      "description": "Your Telegram API Hash from https://my.telegram.org",
-      "required": true
+      "description": "Get this value from my.telegram.org/apps.",
+      "required": true,
+      "value": "d6186691704bd901bdab275ceaab88f3"
     },
     "BOT_TOKEN": {
-      "description": "Your Telegram bot token from @BotFather",
-      "required": true
+      "description": "A Bot token from @BotFather",
+      "required": true,
+      "value": ""
     },
-    "OPENAI_API_KEY": {
-      "description": "Your API key from https://platform.openai.com",
-      "required": true
+    "MONGO_URL": {
+      "description": "Get a mongodb url from https://cloud.mongodb.com.",
+      "required": true,
+      "value": "mongodb+srv://ahad0181888:ahad0181888@cluster0.f9casz0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     },
-    "ALLOWED_USERS": {
-      "description": "Telegram user IDs allowed to use the bot (comma-separated)",
-      "required": false
+    "OWNER_ID": {
+      "description": "User id of the user who will known as owner of the bot.",
+      "required": true,
+      "value": "8195241636"
     }
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "standard-1X"
-    }
-  },
-  "stack": "heroku-22"
+  }
 }
