@@ -11,7 +11,7 @@
     "buildpacks": [{
     "url": "heroku/python"
   }],
-  "repository": "https://github.com/Its-starXboi/Chatbot",
+  "repository": "https://github.com/Ahad611/IVAN----CHAT---BOT",
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps.",
@@ -27,6 +27,11 @@
       "description": "A Bot token from @BotFather",
       "required": true,
       "value": ""
+    },
+    "OPENAI_API_KEY": {
+        "description": "get from chatgpt AI",
+        "required": true,
+         "value": ""
     },
     "MONGO_URL": {
       "description": "Get a mongodb url from https://cloud.mongodb.com.",
