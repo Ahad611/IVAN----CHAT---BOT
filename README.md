@@ -1,36 +1,37 @@
-# Ivan x AI Chatbot 🤖
+# 🤖 Telegram AI Chatbot
 
-A modular Telegram chatbot powered by OpenAI's GPT models and `python-telegram-bot`.
+A simple Telegram AI chatbot built with [python-telegram-bot](https://python-telegram-bot.org) and [OpenAI GPT](https://openai.com).
 
-## Features
-- AI replies (`/start` or just type)
-- Inline mode (@YourBot in any chat)
-- Usage stats (`/stats`)
-- Eval for devs (`/eval <expr>` for IDs in `ALLOWED_USERS`)
-- Chat info (`/chatinfo`)
-- Inline buttons
+## ✨ Features
+- AI-powered chat with OpenAI GPT
+- Inline buttons for quick actions
+- User logging (stores all users who interact)
+- `/ping` command to check latency
+- `/help` and `/start` commands
+- Easy to deploy to Heroku
 
-## Quick Deploy (Heroku)
+---
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)]([https://www.herokucdn.com/deploy/button.svg](https://github.com/Ahad611/IVAN----CHAT---BOT))
+## 🚀 Deploy to Heroku
+Click the button below to deploy instantly:
 
-### Env Vars
-- `API_ID` — from https://my.telegram.org
-- `API_HASH` — from https://my.telegram.org
-- `BOT_TOKEN` — from @BotFather
-- `OPENAI_API_KEY` — from https://platform.openai.com
-- `ALLOWED_USERS` — optional, comma-separated user IDs
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)
 
-## Run Locally
+---
 
+## 🔧 Environment Variables
+You’ll need the following environment variables in Heroku or your `.env` file:
+
+| Variable           | Description |
+|--------------------|-------------|
+| `BOT_TOKEN`        | Telegram Bot API Token from [BotFather](https://t.me/BotFather) |
+| `OPENAI_API_KEY`   | Your OpenAI API Key from [OpenAI](https://platform.openai.com) |
+
+---
+
+## 🖥 Local Development
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+cd YOUR_REPO_NAME
 pip install -r requirements.txt
-export API_ID=12345 API_HASH=abcd BOT_TOKEN=123:abc OPENAI_API_KEY=sk-xxxx
-python start.py
-```
-
-## Notes
-- This repo pins `openai==0.28.1` to use `ChatCompletion` for simplicity.
-- For newer OpenAI SDKs, migrate to the `client.chat.completions.create` API.
+python main.py
