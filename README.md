@@ -1,4 +1,4 @@
-# Telegram AI Chatbot 🤖
+# Ivan x AI Chatbot 🤖
 
 A modular Telegram chatbot powered by OpenAI's GPT models and `python-telegram-bot`.
 
