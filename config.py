@@ -16,7 +16,7 @@ UPDATE_CHNL = getenv("UPDATE_CHNL","UPDATE_IN_BOTS")
 OWNER_USERNAME = getenv("OWNER_USERNAME", None)
 
 # OpenAI API key
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY","")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY","OPENAI_API_KEY")
 
 # Random Start Images
 IMG = [
