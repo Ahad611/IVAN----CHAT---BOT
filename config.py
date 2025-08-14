@@ -1,19 +1,42 @@
 import os
 
-# Telegram credentials
-API_ID = int(os.getenv("API_ID", "0"))
-API_HASH = os.getenv("API_HASH", "")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+from os import getenv
 
-# OpenAI API
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+from dotenv import load_dotenv
 
-# Allowed users (optional, comma-separated Telegram user IDs)
-ALLOWED_USERS = os.getenv("ALLOWED_USERS", "")
-if ALLOWED_USERS:
-    try:
-        ALLOWED_USERS = [int(u.strip()) for u in ALLOWED_USERS.split(",") if u.strip()]
-    except ValueError:
-        ALLOWED_USERS = []
-else:
-    ALLOWED_USERS = []
+load_dotenv()
+
+API_ID = int(getenv("API_ID","22657083"))
+API_HASH = getenv("API_HASH","d6186691704bd901bdab275ceaab88f3")
+BOT_TOKEN = getenv("BOT_TOKEN", None)
+OWNER_ID = int(getenv("OWNER_ID", "8195241636"))
+MONGO_URL = getenv("MONGO_URL", None)
+SUPPORT_GRP = getenv("SUPPORT_GRP","https://t.me/+G42j7plUt91mYmQx")
+UPDATE_CHNL = getenv("UPDATE_CHNL","UPDATE_IN_BOTS")
+OWNER_USERNAME = getenv("OWNER_USERNAME", None)
+
+# Random Start Images
+IMG = [
+     "https://telegra.ph/file/45e5da1eab8f5892981ca.jpg",
+]
+
+
+# Random Stickers
+STICKER = [
+    "CAACAgUAAx0CYlaJawABBy4vZaieO6T-Ayg3mD-JP-f0yxJngIkAAv0JAALVS_FWQY7kbQSaI-geBA",
+    ",
+]
+
+
+EMOJIOS = [
+    "💣",
+    "💥",
+    "🪄",
+    "🧨",
+    "⚡",
+    "🤡",
+    "👻",
+    "🎃",
+    "🎩",
+    "🕊",
+]
