@@ -10,4 +10,4 @@ if __name__ == "__main__":
 
     logging.info("🚀 Starting Telegram AI Chatbot via __main__.py ...")
     start_bot()
-￼Enter
+Enter
