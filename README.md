@@ -1,4 +1,4 @@
-# 🤖 Telegram AI Chatbot
+# 🤖 Ivan x AI Chatbot
 
 A simple Telegram AI chatbot built with [python-telegram-bot](https://python-telegram-bot.org) and [OpenAI GPT](https://openai.com).
 
@@ -15,7 +15,7 @@ A simple Telegram AI chatbot built with [python-telegram-bot](https://python-tel
 ## 🚀 Deploy to Heroku
 Click the button below to deploy instantly:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Ahad611/IVAN----CHAT---BOT)
 
 ---
 
