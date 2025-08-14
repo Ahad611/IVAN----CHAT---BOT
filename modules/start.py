@@ -1,88 +1,30 @@
-from bot import start_bot
+# start.py
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import ContextTypes
+from helper import get_user_info
 
-import asyncio
-import random
+# Change these to your details
+OWNER_ID = 123456789  # Your Telegram numeric ID
+DEVELOPER_USERNAME = "YourUsername"  # Without @
 
-from pyrogram import filters
-from pyrogram.enums import ChatType
-from pyrogram.types import InlineKeyboardMarkup, Message
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Handle the /start command."""
+    user_info = get_user_info(update)
 
-from config import EMOJIOS, IMG, STICKER
-from Star import
-from Star.database.chats import add_served_chat
-from Star.database.users import add_served_user
-from Star.modules.helpers import (
-    CLOSE_BTN,
-    DEV_OP,
-    HELP_BTN,
-    HELP_BUTN,
-    HELP_READ,
-    HELP_START,
-    SOURCE_READ,
-    START,
-)
+    keyboard = [
+        [InlineKeyboardButton("📜 Help", callback_data="help")],
+        [InlineKeyboardButton("ℹ️ About", callback_data="about")],
+        [
+            InlineKeyboardButton("👑 Owner", url=f"tg://user?id={OWNER_ID}"),
+            InlineKeyboardButton("💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}")
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
 
-
-@StarX.on_cmd(["start", "aistart"])
-async def start(_, m: Message):
-    if m.chat.type == ChatType.PRIVATE:
-        accha = await m.reply_text(
-            text=random.choice(EMOJIOS),
-        )
-        await asyncio.sleep(1.3)
-        await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ ѕтαятιиg..__")
-        await asyncio.sleep(0.2)
-        await accha.edit("__ᴅιиg ᴅσиg ꨄ sтαятιиg.....__")
-        await asyncio.sleep(0.2)
-        await accha.edit("__ᴅιиg ᴅσиg ꨄ︎ sтαятιиg..__")
-        await asyncio.sleep(0.2)
-        await accha.delete()
-        umm = await m.reply_sticker(sticker=random.choice(STICKER))
-        await asyncio.sleep(2)
-        await umm.delete()
-        await m.reply_photo(
-            photo=random.choice(IMG),
-            caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ {StarX.name}**\n**➻ ᴀɴ ᴀɪ ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [ᴏɴ/ᴏғғ]**\n<b>||๏ ʜɪᴛ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ғᴏʀ ʜᴇʟᴘ||</b>""",
-            reply_markup=InlineKeyboardMarkup(DEV_OP),
-        )
-        await add_served_user(m.from_user.id)
-    else:
-        await m.reply_photo(
-            photo=random.choice(IMG),
-            caption=START,
-            reply_markup=InlineKeyboardMarkup(HELP_START),
-        )
-        await add_served_chat(m.chat.id)
-
-
-@StarX.on_cmd("help")
-async def help(client: StarX, m: Message):
-    if m.chat.type == ChatType.PRIVATE:
-        hmm = await m.reply_photo(
-            photo=random.choice(IMG),
-            caption=HELP_READ,
-            reply_markup=InlineKeyboardMarkup(HELP_BTN),
-        )
-        await add_served_user(m.from_user.id)
-    else:
-        await m.reply_photo(
-            photo=random.choice(IMG),
-            caption="**ʜᴇʏ, ᴘᴍ ᴍᴇ ғᴏʀ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs!**",
-            reply_markup=InlineKeyboardMarkup(HELP_BUTN),
-        )
-        await add_served_chat(m.chat.id)
-
-
-@StarX.on_cmd("repo")
-async def repo(_, m: Message):
-    await m.reply_text(
-        text=SOURCE_READ,
-        reply_markup=InlineKeyboardMarkup(CLOSE_BTN),
-        disable_web_page_preview=True,
+    await update.message.reply_text(
+        text=f"👋 Hello {update.effective_user.first_name}!\n\n"
+             "I'm your AI-powered Telegram chatbot.\n"
+             "Ask me anything and I'll try to help.\n\n"
+             f"Your info: {user_info}",
+        reply_markup=reply_markup
     )
-
-
-@StarX.on_message(filters.new_chat_members)
-async def welcome(_, m: Message):
-    for member in m.new_chat_members:
-        await m.reply_photo(photo=random.choice(IMG), caption=START)
